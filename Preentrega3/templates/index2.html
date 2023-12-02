@@ -1,0 +1,40 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Sitio Web{% endblock %}</title>
+    <!-- Tu enlace a estilos, scripts, o cualquier otra cosa que quieras incluir -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Bienvenido a Mi Sitio Web{% endblock %}</h1>
+        <!-- Puedes agregar elementos adicionales al encabezado aquí -->
+    </header>
+    
+    <nav>
+        <!-- Barra de navegación o menú de tu sitio -->
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/about/">Acerca de</a></li>
+            <!-- Agrega más elementos de menú según sea necesario -->
+        </ul>
+    </nav>
+
+    <div class="contenido">
+        {% block contenido %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; {% now "Y" %} Mi Sitio Web. Todos los derechos reservados.</p>
+        <!-- Puedes incluir más información en el pie de página si lo deseas -->
+    </footer>
+
+    <!-- Tu enlace a scripts adicionales o cualquier cosa al final del cuerpo -->
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
+

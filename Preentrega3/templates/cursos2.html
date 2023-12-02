@@ -1,0 +1,16 @@
+{% extends 'base.html'
+%}
+
+{% block content %}
+    <h1>Listas de Cursos</h1>
+
+  
+
+    <h2>Agregar Nuevo Curso</h2>
+
+    <form method="post" action="{% url 'nombre_de_la_vista_que_procesa_el_formulario' %}">
+        {% csrf_token %}
+        {{ curso_form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}

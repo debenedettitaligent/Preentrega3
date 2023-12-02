@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Crear Curso</h2>
+  <form method="post" action="{% url 'crear_curso' %}">
+    {% csrf_token %}
+    {{ curso_form.as_p }} {# Utilizar el formulario definido en forms.py #}
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}
